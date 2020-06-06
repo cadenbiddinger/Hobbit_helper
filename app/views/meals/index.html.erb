@@ -1,2 +1,21 @@
-<h1>Meals#index</h1>
-<p>Find me in app/views/meals/index.html.erb</p>
+<%# <h1>Todays Meals</h1>
+<p>Find me in app/views/meals/index.html.erb</p> %>
+
+
+<%= button_to "Log Out", destroy_user_session_path, method: :delete %>
+<h2>Welcome <%= current_user.first_name %></h2>
+
+<h2> Client Profile </h2>
+
+<%= link_to 'Create a New Meal Plan', new_meal_plan_path %>
+
+<ul>
+    <% @wish_lists.each do |list| %>
+        <li>
+           
+            <%= list.name %> <%= link_to 'Edit this list', edit_wish_list_path(list) %> 
+            <%= link_to 'Delete this wish list', wish_list_path(list), method: :delete%>
+        </li>
+    <% end %>
+</ul>
+<%= button_to 'Log Out', destroy_user_session_path, method: :delete %>

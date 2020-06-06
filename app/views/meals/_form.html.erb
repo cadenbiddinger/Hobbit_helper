@@ -1,0 +1,8 @@
+<%= form_with(model: @meal, local: true) do |f| %>
+  <div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, placeholder: "Name" %>
+  <%= f.submit 'updated list' %>
+  </div>
+
+  <% end %>
