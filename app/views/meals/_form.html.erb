@@ -1,8 +1,13 @@
 <%= form_with(model: @meal, local: true) do |f| %>
   <div class="field">
-  <%= f.label :name %>
-  <%= f.text_field :name, required: true, placeholder: "Name" %>
-  <%= f.submit 'updated list' %>
+  <%= f.label :days %>
+  <%= f.collection_select :days, [['Sunday'], ['Monday'], ['Tuesday'], ['Wednesday'], ['Thursday'], ['Friday'], ['Saturday']], required: true, placeholder: "Pick a day of the week" %>
+  </div>
+
+  <div class="field">
+  <%= f.label :meals %>
+  <%= f.collection_select :name, [['Breakfast'], ['Second Breakfast'], ['Elevenses'], ['Luncheon'], ['Afternoon Tea'], ['Dinner'], ['Supper']], required: true, placeholder: "Select Meal" %>
+  <%= f.submit 'Update Your Meal Plan' %>
   </div>
 
   <% end %>

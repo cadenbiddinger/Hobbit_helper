@@ -3,18 +3,25 @@
 
 
 <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
-<h2>Welcome <%= current_user.first_name %></h2>
+
+<h2>Welcome , <%= current_user.first_name %> ! </h2>
 
 <h2> Client Profile </h2>
+<h3> Name: <%= current_user.first_name%> <%= current_user.last_name%> <h3>
+<h3> Age: <%= current_user.age%> <h3>
+<h3> Gender: <%= current_user.gender%> <h3>
+<h3> Calorie Goal: <%= current_user.calorie_goal%> <h3>
 
-<%= link_to 'Create a New Meal Plan', new_meal_plan_path %>
+
+
+<%= link_to 'Create a New Meal Plan', new_meal_path %>
 
 <ul>
-    <% @wish_lists.each do |list| %>
+    <% @meals.each do |meal| %>
         <li>
            
-            <%= list.name %> <%= link_to 'Edit this list', edit_wish_list_path(list) %> 
-            <%= link_to 'Delete this wish list', wish_list_path(list), method: :delete%>
+            <%= meal.name %> <%= link_to 'Edit this Meal Plan', edit_meal_path(meal) %> 
+            <%= link_to 'Delete this Meal Plan', meal_path(meal), method: :delete%>
         </li>
     <% end %>
 </ul>

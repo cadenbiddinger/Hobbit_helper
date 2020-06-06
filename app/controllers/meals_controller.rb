@@ -40,7 +40,7 @@ class MealsController < ApplicationController
 
   private 
     def meal_params
-      params.requre(:meal).permit(:breakfast, :second_breakfast, :elevensies, :luncheon, :afternoon_tea, :dinner, :supper)
+      params.require(:meal).permit(:days, :name)
     end
 
     def set_meal
