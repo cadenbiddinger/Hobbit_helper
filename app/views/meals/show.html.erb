@@ -1,2 +1,13 @@
-<h1>Meals#show</h1>
-<p>Find me in app/views/meals/show.html.erb</p>
+
+
+<div>
+  <%= link_to 'View', meal_path(@meal) %>
+  <%= link_to 'Edit', edit_meal_path(@meal) %> 
+  <%= link_to 'Delete', meal_path(@meal), method: :delete%>
+</div>
+
+<%= link_to "Back", meals_path(@meal) %>
+
+
+
+

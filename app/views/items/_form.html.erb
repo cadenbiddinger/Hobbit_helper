@@ -1,0 +1,12 @@
+<%# <> <%= @item.id ? 'Edit Item' : 'Create Item' %> 
+<hr />
+<%= form_with(model: @meal, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :item %>
+    <%= f.text_field :body %>
+  </div>
+
+  <div class="field">
+    <%= f.submit%>
+  </div>
+<% end %>

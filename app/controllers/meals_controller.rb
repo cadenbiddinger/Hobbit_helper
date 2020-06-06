@@ -9,7 +9,7 @@ class MealsController < ApplicationController
   end
 
   def new
-    @meal = Meal.new
+    @meal = current_user.meals.new
   end
 
   def create
